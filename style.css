@@ -10,3 +10,11 @@ form {
     width: 80%;
     margin: auto;
 }
+
+img {
+    width: 40%;
+}
+
+#private-space-container {
+    text-align: center;
+}

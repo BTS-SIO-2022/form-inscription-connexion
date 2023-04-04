@@ -1,8 +1,7 @@
 <?php
+session_start();
 
 require __DIR__.'/inc/DB.php';
-
-session_start();
 
 if(isset($_POST['name']) && isset($_POST['password'])){
     $db = new DB;
