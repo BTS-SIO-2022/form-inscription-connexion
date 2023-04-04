@@ -12,7 +12,24 @@
     <h1>Inscription</h1>
 
     <?php
-    var_dump($_POST);
+//    var_dump($_POST);
+//    var_dump($_GET);
+  if(isset($_GET['erreur']))
+  {
+    $erreur = $_GET['erreur'];
+    switch($erreur)
+    {
+      case 1 :
+        echo "<p style='color:red;'>Une erreur est survenue, nous n'avons pas inscrire, merci de reessayer plus tard</p>";
+        break;
+      case 2 : 
+        echo "<p style='color:red;'>Les mots de passe ne sont pas identiques</p>";
+        break;
+      case 3 :
+        echo "<p style='color:red;'>Merci de remplir toutes les informations</p>";
+        break;
+    }
+  }
     ;?>
 
 <form action="inscriptionController.php" method="POST">

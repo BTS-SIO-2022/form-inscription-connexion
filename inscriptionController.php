@@ -42,5 +42,20 @@ if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) 
         $result = $pdoStatement->execute();
         
         var_dump($result);
+
+        // Je suis à l'étape 5 où je veux rediriger mon utilisateur 
+        if($result != 0){
+            // pour faire ma redirection j'utilise la fonction header https://www.php.net/manual/fr/function.header.php
+            header('Location: connexion.php');
+        } else {
+            header('Location: index.php?erreur=1');
+            // Une erreur lors de l'ajout à la base de données est survenue par exemple le mot de passe de ma base de données a été changé et je n'ai pas mis à jour mon code, ou bien le serveur de la base de donnée est inacessible
+        }
+    }else {
+        header('Location: index.php?erreur=2');
+        // Les mots de passe de ne sont pas identiques
     }
+}else {
+    header('Location : index.php?erreur=3');
+    // nom d'utilisateur ou mot de passe ou mail ou les trois sont vides
 }
