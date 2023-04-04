@@ -15,7 +15,7 @@
     var_dump($_POST);
     ;?>
 
-<form action="" method="POST">
+<form action="inscriptionController.php" method="POST">
     <div class="mb-3">
     <label for="exampleInputName" class="form-label">Renseigner votre nom</label>
     <input type="text" class="form-control" id="exampleInputName" name="name">
